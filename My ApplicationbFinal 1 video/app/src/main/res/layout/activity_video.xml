@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="#000000"
+    tools:context=".VideoActivity">
+
+    <VideoView
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_above="@id/controlLayout"
+        android:id="@+id/videoView" />
+
+    <RelativeLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/controlLayout"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:id="@+id/seekBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <SeekBar
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:id="@+id/seekBar"
+                android:thumbTint="#FF4081"
+                android:progressTint="#FF4081"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:background="@android:color/transparent" />
+
+            <TextView
+                android:id="@+id/currentTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00:00"
+                android:textColor="#FFFFFF"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp" />
+
+            <TextView
+                android:id="@+id/totalTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00:00"
+                android:textColor="#FFFFFF"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/buttonsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <ImageButton
+                android:id="@+id/btnPlayPause"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_play"
+                android:backgroundTint="#FF4081"
+                android:padding="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp" />
+
+            <ImageButton
+                android:id="@+id/btnSpeed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_speed"
+                android:backgroundTint="#FF4081"
+                android:padding="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp" />
+
+            <ImageButton
+                android:id="@+id/btnFullscreen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#FF4081"
+                android:padding="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/speedBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:background="#55000000"
+            android:gravity="center_horizontal">
+
+            <SeekBar
+                android:id="@+id/speedSeekBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:thumbTint="#FF4081"
+                android:progressTint="#FF4081"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:background="@android:color/transparent" />
+
+            <EditText
+                android:id="@+id/customSpeedInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Custom Speed"
+                android:textColor="#FFFFFF"
+                android:inputType="numberDecimal"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:id="@+id/currentSpeedText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="#FFFFFF"
+                android:text="1.00x"
+                android:layout_marginTop="8dp" />
+
+            <Button
+                android:id="@+id/btnSubmitSpeed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+                android:text="Submit"
+                android:layout_marginTop="8dp"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
